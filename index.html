@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./main.css">
+  <title>Shazoo games for Stanis Love</title>
+</head>
+<body>
+  <section class="main">
+
+  </section>
+
+<script src="./pars_result.js"></script>
+  <script>
+// fetch('./pars_result.json').then(response => {
+//   return response.json();
+// }).then(data => {
+//   let parsedData = data;
+//   showContent(parsedData);
+//   // console.log(parsedData);
+// }).catch(err => {
+//   console.log(err);
+// });
+
+console.log(post);
+
+
+let out = document.querySelector('section.main');
+
+let showContent = (data) => {
+  for (let i = 0; i < data.length; i++) {
+    const element = data[i];
+    const header = element.header;
+    const link = element.link;
+    const date = element.date;
+    const img = element.img;
+    const desc = element.desc;
+
+    out.innerHTML += 
+    "<div class='wrapper'><div class='date'><p>" + date + "</p></div>" +
+    "<div class='Title'><a href='" + link + "'><h2>" + header + "</h2></a></div>" +
+    "<div class='desc'><p>" + desc + "</p></div>" +
+    "<div class='image'><a href='" + link + "'><img src='" + img + "' alt=''></a></div></div><br>";
+
+    // console.log(desc);
+  }
+
+}
+showContent(post);
+
+  </script>
+</body>
+</html>
